@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Electro Burgers - Pago</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            min-height: 100vh;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+
+        .subtitulo {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bbva {
+            background: #072146;
+        }
+
+        .codi {
+            background: #159447;
+        }
+
+        .info {
+            background: #eeeeee;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .clabe {
+            font-size: 18px;
+            font-weight: bold;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+
+        .copiar {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #333;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .aviso {
+            margin-top: 30px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>🍔 Electro Burgers</h1>
+
+    <p class="subtitulo">
+        Paga tu pedido de forma rápida y segura
+    </p>
+
+    <a href="#transferencia" class="boton bbva">
+        🏦 Pagar por transferencia
+    </a>
+
+    <a href="#codi" class="boton codi">
+        📱 Pagar con CoDi
+    </a>
+
+    <div id="transferencia" class="info">
+
+        <h2>🏦 Transferencia BBVA</h2>
+
+        <p><strong>Titular:</strong></p>
+
+        <p>
+            Daniel Arturo Flores Pacheco
+        </p>
+
+        <p><strong>CLABE:</strong></p>
+
+        <p class="clabe" id="clabe">
+            PON-AQUÍ-TU-CLABE
+        </p>
+
+        <button class="copiar" onclick="copiarCLABE()">
+            📋 Copiar CLABE
+        </button>
+
+        <p>
+            Realiza tu transferencia y conserva tu comprobante.
+        </p>
+
+    </div>
+
+
+    <div id="codi" class="info">
+
+        <h2>📱 Pago con CoDi</h2>
+
+        <p>
+            Escanea nuestro código QR para realizar tu pago.
+        </p>
+
+        <p>
+            AQUÍ COLOCAREMOS TU QR DE CODI
+        </p>
+
+    </div>
+
+
+    <p class="aviso">
+        Gracias por comprar en Electro Burgers 🍔
+    </p>
+
+</div>
+
+
+<script>
+
+function copiarCLABE() {
+
+    const clabe = document.getElementById("clabe").innerText;
+
+    navigator.clipboard.writeText(clabe);
+
+    alert("CLABE copiada correctamente");
+
+}
+
+</script>
+
+</body>
+</html>
